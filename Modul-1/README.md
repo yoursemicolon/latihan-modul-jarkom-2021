@@ -13,11 +13,11 @@
    ping [monta.if.its.ac.id](https://monta.if.its.ac.id/) <br>
    ip = 103.94.190.11 <br>
    Capture display pada Wireshark ```host monta.if.its.ac.id``` atau ```host 103.94.190.11``` <br>
-   Port [monta.if.its.ac.id](https://monta.if.its.ac.id/) adalah 80 -> http -> (less secure) <br>
+   Port [monta.if.its.ac.id](https://monta.if.its.ac.id/) adalah 80 -> http (less secure) <br>
 
 3. Ada berapa paket yang dikirimkan oleh web server ketika mengunduh file? Mengapa terjadi seperti itu? <br>
    **Jawab:** <br>
-   Sangat banyak karena yang dikirimkan berupa chunks (potongan-potongan). Untuk mengirimkan atau menerima data membutuhkan end-point satu dan end-point lainnya. Dikirimkan dalam bentuk chunks agar jika terjadi masalah pada bandwidth, tidak banyak data yang lost. Jika gagal satu part, yang diulang adalah part tersebut tidak semuanya. <br><br>
+   Sangat banyak karena yang dikirimkan berupa chunks (potongan-potongan). Untuk mengirimkan atau menerima data membutuhkan end-point satu dan end-point lainnya. Dikirimkan dalam bentuk chunks agar jika terjadi masalah pada bandwidth, tidak banyak data yang lost. Jika gagal satu part, yang diulang adalah part tersebut tidak semuanya. <br>
 
 4. Dari hasil analisa paket, apa perbedaan ketika menggunakan persistent connection dan non-persistent connection?
 5. Apa perbedaan ketika autentikasi menggunakan method basic dengan digest?
