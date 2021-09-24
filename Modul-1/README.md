@@ -19,12 +19,22 @@
    **Jawab:** <br>
    Sangat banyak karena yang dikirimkan berupa chunks (potongan-potongan). Untuk mengirimkan atau menerima data membutuhkan end-point satu dan end-point lainnya. Dikirimkan dalam bentuk chunks agar jika terjadi masalah pada bandwidth, tidak banyak data yang lost. Jika gagal satu part, yang diulang adalah part tersebut tidak semuanya. <br>
 
-4. Dari hasil analisa paket, apa perbedaan ketika menggunakan persistent connection dan non-persistent connection?
-5. Apa perbedaan ketika autentikasi menggunakan method basic dengan digest?
-6. Apa perbedaan ketika mengakses halaman web biasa dengan ketika proses login terjadi?
-7. Apa saja yang selalu dikirimkan browser ke web server? Export data hasil paket capture!
-8. Apakah ada paket yang dikirimkan oleh perangkat anda pada saat tidak sedang mengakses browser? Kalau ada, coba temukan domainnya?
-9. Akses website http://www.columbia.edu/~fdc/sample.html, download gambar pada halaman tersebut lalu coba ambil gambar dari wireshark!
+4. Dari hasil analisa paket, apa perbedaan ketika menggunakan persistent connection dan non-persistent connection? <br>
+   **Jawab:** <br>
+   Persistent dan non-persistent adalah dua tipe HTTP connections yang digunakan untuk menghubungkan client dengan webserver. Persistent mempunyai tipe ```1.1``` sedangkan Non-persistent mempunyai tipe ```1.0```. <br>
+   * **Persistent connection:** link / sambungan yang tidak akan mati / tertutup ketika pengeksekusian scriptnya berakhir (keep alive, 1 request 1 koneksi saja), HTTP 1.1 <br> Connection Time: ```2 RTT```
+   * **Non-persistent connection:** link/sambungan akan langsung ditutup / mati saat pengeksekusian script berakhir (tiap 1 request connect, disconnect. Kalau ada request connect lagi), HTTP 1.0 <br> Connection Time: ```2RTT + file transmission time``` <br>
+   
+   **Sample Problem** <br>
+   Suppose 10 images need to be downloaded from the HTTP server. The total time taken to request and download 10 images in a non-persistent and persistent connection is: <br>
+   * Persistent: ```2 RTT (Connection time) + 10 RTT= 12 RTT12RTT```
+   * Non-persistent: ```2 RTT (Connection time) + 2 * 10 RTT= 22 RTT22RTT```
+  
+6. Apa perbedaan ketika autentikasi menggunakan method basic dengan digest?
+7. Apa perbedaan ketika mengakses halaman web biasa dengan ketika proses login terjadi?
+8. Apa saja yang selalu dikirimkan browser ke web server? Export data hasil paket capture!
+9. Apakah ada paket yang dikirimkan oleh perangkat anda pada saat tidak sedang mengakses browser? Kalau ada, coba temukan domainnya?
+10. Akses website http://www.columbia.edu/~fdc/sample.html, download gambar pada halaman tersebut lalu coba ambil gambar dari wireshark!
 
 ## References
 * https://id.wikipedia.org/wiki/Porta_(jaringan_komputer)
