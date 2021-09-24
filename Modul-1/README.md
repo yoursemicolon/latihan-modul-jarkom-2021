@@ -30,13 +30,36 @@
    * Persistent: ```2 RTT (Connection time) + 10 RTT= 12 RTT12RTT```
    * Non-persistent: ```2 RTT (Connection time) + 2 * 10 RTT= 22 RTT22RTT```
   
-6. Apa perbedaan ketika autentikasi menggunakan method basic dengan digest?
-7. Apa perbedaan ketika mengakses halaman web biasa dengan ketika proses login terjadi?
-8. Apa saja yang selalu dikirimkan browser ke web server? Export data hasil paket capture!
-9. Apakah ada paket yang dikirimkan oleh perangkat anda pada saat tidak sedang mengakses browser? Kalau ada, coba temukan domainnya?
-10. Akses website http://www.columbia.edu/~fdc/sample.html, download gambar pada halaman tersebut lalu coba ambil gambar dari wireshark!
+5. Apa perbedaan ketika autentikasi menggunakan method basic dengan digest? <br>
+   **Jawab:** <br>
+   Perbedaan dalam bentuk enkripsi. Basic method melakukan enkripsi dari utf-8 menjadi base64 yang kemudian dikirimkan ke server. Sementara Digest method melakukan enkripsi dari utf-8 menjadi md5.
+   
+6. Apa perbedaan ketika mengakses halaman web biasa dengan ketika proses login terjadi? <br>
+   **Jawab:** <br>
+   HTTP mempunyai 2 method penting, yaitu GET dan POST. Sebelum login, method yang digunakan adalah GET, setelah login methodnya adalah POST. POST mengirim data inputan ke webserver seperti input username dan password. <br>
+   
+   **Ketika mengakses halaman biasa:**
+   * Browser pergi ke server DNS dan mencari alamat asli server website
+   * Browser mengirimkan HTTP request message ke server untuk meminta izin melihat website
+   * Server menyetujui request client dan mengirimkan file website ke browser dalam bentuk data packet
+   * Browser menggabungkan data packet ke dalam bentuk website complete dan menampilkannya ke user
+
+   **Ketika proses login terjadi,** website melakukan autentikasi terlebih dahulu, yaitu memverifikasi credential yang client berikan. Autentikasi biasanya menggunakan enkripsi untuk melindungi data.
+   
+7. Apa saja yang selalu dikirimkan browser ke web server? Export data hasil paket capture! <br>
+   **Jawab:** <br>
+   Yang dikirimkan browser ke webserver adalah request. HTTP request message ke server, meminta salinan website ke client. Yang dikirim: TCP.
+   
+8. Apakah ada paket yang dikirimkan oleh perangkat Anda pada saat tidak sedang mengakses browser? Kalau ada, coba temukan domainnya? <br>
+   **Jawab:** <br>
+   Ada, untuk aplikasi background yang memakai internet. Untuk menemukan domainnya temukan di ```ip reverse lookup```
+   
+9. Akses website http://www.columbia.edu/~fdc/sample.html, download gambar pada halaman tersebut lalu coba ambil gambar dari wireshark!
 
 ## References
 * https://id.wikipedia.org/wiki/Porta_(jaringan_komputer)
 * https://github.com/arsitektur-jaringan-komputer/Modul-Jarkom/tree/master/Modul-1
 * https://www.washingtonpost.com/graphics/national/security-of-the-internet/bgp/
+* https://www.educative.io/edpresso/non-persistent-vs-persistent-http
+* https://quakkels.com/posts/what-happens-when-you-login/
+
