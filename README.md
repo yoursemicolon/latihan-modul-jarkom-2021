@@ -5,3 +5,6 @@ Kelompok D07
 * Dyandra Paramitha Widyadhana 05111940000119
 * Amanda Rozi Kurnia 05111940000094
 * Daanii Nabil Ghinannafsi Kusnanta 05111940000163
+
+## Pentingnya Belajar Jarkom
+<img src="img/intermezzo.jpg" alt="intermezzo rek" width="400">
